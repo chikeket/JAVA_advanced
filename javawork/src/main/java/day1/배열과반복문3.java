@@ -1,6 +1,6 @@
 package day1;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,7 +8,7 @@ public class 배열과반복문3 {
 
 	public static void main(String[] args) {
 		
-		ArrayList<Integer> list1 = new ArrayList<Integer>();
+//		ArrayList<Integer> list1 = new ArrayList<Integer>();
 //		list2.add(5);
 //		list2.add(4);
 //		list2.add(3);
