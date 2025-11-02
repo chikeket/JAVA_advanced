@@ -20,7 +20,7 @@ public class 스트림 {
 				new Employee(102, "다유신", 3000)
 				);
 		
-		//급여합계 map섞기
+		//급여합계 map섞기.
 		int sum=  list.stream().mapToInt(e -> (int)e.getSalary() ).sum();
 		System.out.println(sum);
 	}
