@@ -21,6 +21,7 @@ public class 스트림 {
 				);
 		
 		//급여합계 map섞기
-		int sum=  list.stream().mapToInt(Employee::getScore).sum();
+		int sum=  list.stream().mapToInt(e -> (int)e.getSalary() ).sum();
+		System.out.println(sum);
 	}
 }
