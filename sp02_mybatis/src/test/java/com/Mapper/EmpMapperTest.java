@@ -1,0 +1,32 @@
+package com.Mapper;
+
+import java.util.List;
+import java.util.Map;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import com.mapper.EmpMapper;
+import com.mapper.Employee;
+
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration("classpath:spring/datasource-context.xml")
+public class EmpMapperTest {
+
+	@Autowired EmpMapper empMapper;
+	
+	@Test
+	public void 단건조회() {
+		Map map = empMapper.selectone(100);
+		System.out.println(map);
+	}
+	
+	@Test
+	public void 전체조회() {
+		List<Employee> list = empMapper.selectall();
+		System.out.println("2번째 : "+list.get(1));
+	}
+}
