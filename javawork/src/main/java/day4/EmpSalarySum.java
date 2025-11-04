@@ -62,7 +62,7 @@ public class EmpSalarySum {
 		}
 		//스트림 Comparator.comparingInt( (o1, o2) -> (o1.getSalary()-o2.getSalary() ) )
 		list.stream()
-			.sorted( )
+			.sorted( Comparator.comparingLong( Employee::getSalary ) ) 
 //			.forEach(e -> {System.out.println(e);});
 			.forEach(System.out::println);
 		
