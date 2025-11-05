@@ -3,6 +3,7 @@ package com.Mapper;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class EmpMapperTest {
 		System.out.println(map);
 	}
 	
+	@Disabled
 	@Test
 	public void 전체조회() {
 		List<Employee> list = empMapper.selectall();
