@@ -7,7 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-하이!!!
-<img alt="" src="/file/ritri.jpg" width="300">
+가입완료<br>
+${param.name }
 </body>
+<script >
+let msg = "${msg}";
+if(msg){
+alert(msg)	
+}
+</script>
 </html>

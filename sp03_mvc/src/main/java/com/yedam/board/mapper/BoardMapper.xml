@@ -47,6 +47,13 @@ INSERT INTO TBL_BOARD(BNO, TITLE, CONTENT, WRITER)
 VALUES (#{bno}, #{title}, #{content}, #{writer})
 </insert>
 
+<!-- 단건조회 -->
+<select id="getBoard">
+select *
+from tbl_board
+where bno = #{bno}
+</select>
+
 <select id="count">
 select count(*) from tbl_board
 </select>
@@ -60,10 +67,8 @@ set
 where bno = #{bno}
 </update>
 
-<delete id="delete">
-delete
-from tbl_board
-where bno = #{bno}
+<delete id="delete" statementType="CALLABLE" parameterType="Map">
+{ call PROC_BOARD_DELETE(#{bno}, #{result, mode=OUT, jdbcType=VARCHAR, javaType=string} ) }
 </delete>
 
 </mapper>

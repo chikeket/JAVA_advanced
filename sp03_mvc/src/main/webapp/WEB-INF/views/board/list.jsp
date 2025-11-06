@@ -19,7 +19,7 @@
 		<c:forEach items="${list}" var="board">
 			<div class="row mt-5">
 				<div class="col">${board.bno}</div>
-				<div class="col">${board.writer}</div>
+				<div class="col"><a href="/board/update?bno=${board.bno }">${board.writer}</a></div>
 				<div class="col">${board.title}</div>
 			</div>
 			<div class="row">
@@ -30,7 +30,7 @@
 					<div class="header">댓글목록</div>
 					<div class="body">
 						<c:forEach items="${board.reply}" var="reply">
-							<div class="row boarder">
+							<div class="row border">
 							<div class="col-md-1">${reply.rno}</div>
 							<div class="col-md-8">${reply.reply}</div>
 							<div class="col-md-3">${reply.replyer}</div>								

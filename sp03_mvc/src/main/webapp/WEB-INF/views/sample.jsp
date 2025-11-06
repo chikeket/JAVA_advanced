@@ -7,7 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-하이!!!
-<img alt="" src="/file/ritri.jpg" width="300">
+
+<form action="/sample/ex01">
+<input name="name">
+<input name="age">
+<input name="birth" type="date">
+<input name="profile" type="file">
+<button>등록</button>
+</form>
+
 </body>
 </html>
