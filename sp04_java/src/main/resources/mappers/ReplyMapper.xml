@@ -6,6 +6,7 @@
 SELECT * 
 FROM TBL_REPLY
 WHERE bno = #{bno}
+order by rno desc
 </select>
 
 <insert id="insert">
