@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
 <title>board/list.jsp</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -13,11 +15,18 @@
 	crossorigin="anonymous">
 </head>
 <body>
+${header["user-agent"]}
+<hr>
+쿠키:${cookie.JSESSIONID.value }
 	<div class="container-lg">
 		<a href="http://localhost:81/board/register">등록하기 바로가기</a>
-		<h3>게시글목록</h3>
-		<c:forEach items="${list}" var="board">
+		<my:header />
+		<my:search />
+		<div>총게시글수 ${fn:length(list)}</div>
+		<c:forEach items="${list}" var="board" varStatus="status">
+		<c:if test="${ status.first}"><div>목록시작</div></c:if>
 			<div class="row mt-5">
+				<div class="col">${status.count}</div>
 				<div class="col">${board.bno}</div>
 				<div class="col"><a href="/board/update?bno=${board.bno }">${board.writer}</a></div>
 				<div class="col">${board.title}</div>
