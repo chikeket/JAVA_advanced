@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#container {
+	width: 880px;
+	/* border: 1px solid black; */
+	margin: 0 auto;
+}
+
+header {
+	background-color: rgb(235, 50, 121);
+	color: white;
+	padding: 10px 10px 30px 20px;
+}
+
+header h1 {
+	margin: 25px 0px;
+	line-height: 10px;
+}
+
+header li {
+	float: right;
+	margin: 10px;
+	list-style: none;
+}
+
+header a {
+	color: white;
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1>도서대여관리</h1>
+		<nav>
+			<ul>
+				<li><a href="/register">도서등록</a></li>
+				<li><a href="/list">도서목록조회/수정</a></li>
+				<li><a href="/rent">대여현황조회</a></li>
+				<li><a href="/">홈으로</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div layout:fragment="content">	</div>
+</body>
+</html>

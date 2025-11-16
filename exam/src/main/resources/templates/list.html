@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>list.html</title>
+
+</head>
+<body>
+<div layout:fragment="content">
+<h3>도서조회/수정</h3>
+<table>
+  <tr>
+    <th>도서번호</th>
+    <th>도서명</th>
+    <th>표지</th>
+    <th>출판일자</th>
+    <th>금액</th>
+    <th>출판사</th>
+    <th>도서소개</th>
+  </tr>
+  <tr th:each="board, stat : ${list}">
+    <td th:text="${board.bookNo}"></td> 
+    <td><a th:href="@{/book/info(bookNo=${board.bookNo})}" th:text="${board.bookName}"></a></td> 
+    <td th:text="${board.bookCoverimg}"></td>    
+    <td th:text="${#dates.format(board.bookDate, 'yyyy-MM-dd')}"></td>     
+    <td th:text="${board.bookPrice}"></td> 
+    <td th:text="${board.bookPublisher}"></td> 
+    <td th:text="${board.bookInfo}"></td> 
+  </tr>
+ </table>
+</div>
+</body>
+</html>

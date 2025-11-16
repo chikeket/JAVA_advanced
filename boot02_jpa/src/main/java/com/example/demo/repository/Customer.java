@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.hibernate.annotations.DynamicUpdate;
 
+import com.example.demo.common.BaseTimeEntity;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -26,7 +28,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 @Entity
-public class Customer {
+public class Customer extends BaseTimeEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,8 +40,8 @@ public class Customer {
 	
 	String email;	
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	LocalDateTime regdate;
+//	@Temporal(TemporalType.TIMESTAMP)
+//	LocalDateTime regdate;
 
 	
 	@OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
